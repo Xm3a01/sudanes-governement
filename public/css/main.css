@@ -1,0 +1,220 @@
+body
+{
+    font-family: 'Cairo', sans-serif;
+}
+.navbar-dark
+{
+    direction: rtl;
+}
+.navbar .navbar-brand
+{
+    font-size: 30px;
+}
+
+/*
+* this top content the images and some text to description
+*/
+.top-content
+{
+    background: url("../images/gdmlock.jpg") center center  no-repeat fixed;
+    line-height: 200px;
+    color: #bb9137;
+}
+.top-content .biler
+{
+    background-color: #1b181848;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+
+}
+
+.biler .row
+{
+    padding-top: 40px;
+}
+.biler .text-content h2
+{
+    
+    text-align: center;
+}
+.biler .lead
+{
+    line-height: 20px;
+    margin-top: 30px;
+    font-size: 10px;
+}
+.bton
+{
+    line-height: auto;
+    display: inline-block;
+}
+.biler .btn
+{
+    height: 50px;
+    width: 100px;
+    background: transparent;
+    border:1px solid  #b48d38ee;;
+    color: #b48d38ee;
+
+}
+.biler img
+{
+    overflow: hidden;
+    height:300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 2px solid #111010d2;
+
+}
+/*
+* This section social media 
+*/
+.social-media
+{
+    height: 100px;
+    background: #ccc;
+    direction: rtl;
+    text-align: right;
+    box-shadow: 5px 8px 18px #888888;
+}
+/*
+* social media icon setting
+*/
+
+.social-media .fa
+{
+    color: #9ea1a3;
+    font-size: 30px;
+    margin: 20px 30px;
+}
+.social-media ul li
+{
+    float: left;
+}
+.social-media ul li .fa-facebook:hover
+{
+    color: dodgerblue;
+}
+.social-media ul li .fa-twitter:hover
+{
+    color: #2e7adf;
+}
+.social-media ul li .fa-google-plus:hover
+{
+    color: rgb(160, 23, 23);
+}
+/*
+* information section 
+*/
+.info-text
+{
+    padding: 5px 60px;
+    text-align: right;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+  
+}
+.information
+{
+    background: url('../images/41377051_481118205695679_1374654366698438656_n.png') center center no-repeat fixed;
+    background-size: 500px;
+    height: 100%;
+    width: 100%;
+   
+}
+.information .information-dark
+{
+
+    background-color: #cccccca2;
+    padding: 45px;
+    height: 100%;
+    width: 100%;
+}
+
+.information-form
+{
+    background: #b48d38b6;
+    border-radius:8px;
+    padding: 40px;
+    direction: rtl;
+    text-align: right;
+    box-shadow: 5px 8px 18px #888888;
+}
+.information-header
+{
+    margin-bottom: 40px;
+   text-align: center;
+}
+/*
+* footer section
+*/
+.footer
+{
+    height: 400px;
+    background: #333333;
+}
+
+/*
+* framework line under works
+*/
+
+.line-under-center:after
+{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 70px;
+    background: #e65b24;
+    margin: 20px auto;
+}
+
+/*
+* all this code for file input just 
+*/
+.input-group-btn .btn-danger
+{
+    width: 100%;
+    margin-right: 13px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+.file-input
+{
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+
+}
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link 
+{
+    color: red;
+}
+
+.alert-success ,.alert-danger 
+{
+    animation-name: ani;
+    animation-delay: 0.2s;
+    animation-duration: 0.2s;
+    position: absolute;
+    z-index: 100%;
+    text-align: right;
+    direction: rtl;
+}
+.alert-success strong , .alert-danger strong
+ {
+    float: left;
+    cursor:pointer;
+
+ }
+
+@keyframes ani
+{
+    0%{right: 100% ; display: none }
+    100%{left: 20%; z-index: 100%;}
+
+}
+.card-body
+{
+    background: #bb913777;
+}
