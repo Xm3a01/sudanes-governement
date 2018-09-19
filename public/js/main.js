@@ -12,4 +12,3 @@ $(document).ready( function() {
         $('.file-input').val(numFiles + " صوره");
     });
 });
-

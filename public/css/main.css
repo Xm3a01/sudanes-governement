@@ -147,6 +147,11 @@ body
     margin-bottom: 40px;
    text-align: center;
 }
+.information select
+{
+    direction: rtl;
+    text-align: right;
+}
 /*
 * footer section
 */
@@ -186,35 +191,159 @@ body
     border-bottom-right-radius: 0%;
 
 }
-.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link 
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link
 {
     color: red;
-}
-
-.alert-success ,.alert-danger 
-{
-    animation-name: ani;
-    animation-delay: 0.2s;
-    animation-duration: 0.2s;
-    position: absolute;
-    z-index: 100%;
-    text-align: right;
-    direction: rtl;
-}
-.alert-success strong , .alert-danger strong
- {
-    float: left;
-    cursor:pointer;
-
- }
-
-@keyframes ani
-{
-    0%{right: 100% ; display: none }
-    100%{left: 20%; z-index: 100%;}
-
 }
 .card-body
 {
     background: #bb913777;
+    height: auto;
+}
+.count
+{
+    height: 15px;
+    width: 15px;
+    background: red;
+    border-radius: 50%;
+    padding-left: 5px;
+    position: absolute;
+    margin-top: -7px;
+    font-weight: bold;
+    font-size: 10px;
+    color: rgb(223, 215, 215);
+}
+.bell-id i
+{
+    color: #9ea1a3;
+    
+}
+
+/*
+* This for responsble direct space (admin)
+*/
+.back-logo
+{
+    background: url('../images/41377051_481118205695679_1374654366698438656_n.png') center center no-repeat fixed;
+    height: 570px;
+    background-size: 400px;
+}
+
+.back-logo .front-logo
+{
+    padding-top: 59px;
+    background-color: #dad3d391;
+    height: 100%;
+}
+
+.front-logo .font-user
+{
+   position: absolute;
+   top: 80px;
+   left: 85%;
+   width: 200px;
+
+}
+.login-page
+{
+ background: url('../images/white.png') center center no-repeat fixed;
+}
+.cover-on
+{
+    background: #bb913783;
+    height: 100vh;
+    padding-top:100px;
+}
+.cover-on .row
+{
+    direction: rtl;
+}
+.cover-on .login-form
+{
+  width: 300px;
+  height: 300px;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.login-form input  
+{
+    direction: rtl;
+    background-color: #bb91376b;
+}
+.form-group a
+{
+    text-decoration: none;
+    font-weight: bolder;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+.form-group .hint
+{
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.login-form select
+{
+    direction: rtl;
+    background-color: #bb91376b;
+    border: none;
+    border: 1px solid #ccc;
+}
+
+.show-card
+{
+    width:100%;
+    height: 400px;
+}
+.card-text i
+{
+    color: #9ea1a3;
+    margin-top: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 16px;
+}
+.card-text i:hover
+{
+    color: #2e7adf;
+}
+.card-text .fa-minus-circle:hover
+{
+    color:red;
+}
+.message
+{
+    font-family: 'Cairo' ,sans-serif;
+    direction: rtl;
+    font-size: 15px;
+    width: 300px;
+}
+.show-card .card-header
+{
+    text-align: right;
+    direction: rtl;
+    height: auto;
+}
+.dropdown-menu
+{
+    background-color:#ff0000e3;
+    margin-top: 14px;
+   direction: rtl;
+   text-align: right;
+   border-top-right-radius: 0%;
+   border-top-left-radius: 0%
+   
+}
+.dropdown-menu  hr {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+dropdown-item:focus, .dropdown-item:hover {
+    color: #f8f9fa;
+    text-decoration: none;
+    background-color:#f03636e3;
 }

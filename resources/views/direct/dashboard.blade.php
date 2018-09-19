@@ -24,42 +24,39 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                   <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#"> <i class="fa fa-podcast" aria-hidden="true"></i>  الطوارئ <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"> <i class="fa fa-telegram" aria-hidden="true"></i> استفسار</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#" id="about" onclick="show()"> <i class="fa fa-question-circle" aria-hidden="true"></i> عنا</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                      <div id="app">
+                        <a id="navbarDropdown"  class="nav-link dropdown-toggle bell-id" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        @if(Auth::user()->unreadnotifications->count() > 0)
+                        <count class="count"></count> @endif <i class="fa fa-bell"></i> البلاغات
+                          </a>
+                          <div class="dropdown-menu  dropdown-menu-left" aria-labelledby="navbarDropdown">
+                          @foreach(Auth::user()->unreadnotifications as $notfy)
+                              <a href="{{ route('blags.show' , $notfy->data['id']) }}" class="dropdown-item">
+                                    {{ str_limit($notfy->data['notice'], $limit = 40, $end = '...') }}  <span class="caret"></span>      
+                               </a>
+                               <hr>
+                          @endforeach
+                            </div>
+                         </div>
+                     </li>
                   </ul>
                 </div>
             </div>
          </nav> 
-         @foreach($notices as $notice )
-         <br>
-         <center>
-         <div class="col-md-8">
-      
-          <div class="card">
-             <div class="card-header">{{$notice->notice}} ({{count($notice->images)}}) <span class="pull-right">{{$notice->created_at}}</span></div>
-              <div class="card-body">
-                <div class="row">
-                @foreach($notice->images as $image)
-                  <div class="col-md-4">
-                      <img src="{{Storage::url($image->image)}}" height="200px" width="250px">
-                  </div>
-                @endforeach
-                </div>
-             </div>
-           </div>
-        </div>
-      </center>
-         @endforeach
-
-
-  <script src="js/jquery-3.3.1.min.js"></script>
+         <section class="back-logo">
+            
+          <div class="front-logo">
+            <div class="font-user">
+            {<small>{{Auth::user()->ministry->name}}</small>}
+            <a href="" class="dropdown">{{ Auth::user()->name }}</a> 
+            <img src="{{Storage::url( Auth::user()->avatar )}}" height="20"px" width="20px" class="img-circle" alt="">
+            </div>
+             
+          </div>
+     </section>
+ <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
 </body>

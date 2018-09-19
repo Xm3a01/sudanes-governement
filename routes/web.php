@@ -1,5 +1,6 @@
 <?php
 
+use App\Ministry;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +12,26 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+}); 
+
+Route::get('counts', function () {
+    return view('count');
+}); 
+Route::get('/blags', 'BlagController@index');
+Route::post('/blags', 'BlagController@store')->name('blags.store');
+Auth::routes();
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/datas', 'BlagController@data');
+    Route::get('delete/{id}' , 'BlagController@delete')->name('delete.noty');
+    Route::resource('blags', 'BlagController',['except'=>['index','store']]);
+    Route::get('delete/{id}' , 'BlagController@delete')->name('delete.noty');
+    Route::get('/delets{id}', 'ShowController@delete')->name('deletes');
+    Route::get('/downloads/{id}', 'ShowController@download')->name('downloads');
+
 });
 
-Route::resource('notices','NoticeController');
+

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Session;
+use App\User;
 use App\Image;
 use App\Notice;
+use App\Ministry;
+use App\Notifications\NewNotice;
 use Illuminate\Http\Request;
 
 class NoticeController extends Controller
@@ -16,10 +19,8 @@ class NoticeController extends Controller
      */
     public function index()
     {
-      $notices =  Notice::all();
-      $notices->load('images');
-
-      return view('direct.dashboard')->withNotices($notices);
+        $ministries =  Ministry::all();
+        return view('website')->withMinistries($ministries);
     }
 
     /**
@@ -32,10 +33,11 @@ class NoticeController extends Controller
     {
         $this->validate($request ,[
 
-           'notice'=>'required|max:255'
+           'notice'=>'required|max:255',
+           'ministry'=> 'required'
         ]);
 
-        $notices = Notice::create([
+        $notice = Notice::create([
           
             'notice'=> $request->notice
         ]);
@@ -47,15 +49,17 @@ class NoticeController extends Controller
                $img = new  Image();
 
                     $img->image =  $image->store('public/notice_images');
-                    $img->notice_id = $notices->id;
+                    $img->notice_id = $notice->id;
 
                     $img->save();
             }
         }
+        $users = User::findOrfail($request->ministry)->get();  
+        \Notification::send( $users , new NewNotice($notice));
 
         Session::flash('success','تم ارسال بلاغك بنجاح');
 
-        return redirect()->back();
+        return redirect()->route('welcome');
     }
 
     /**
@@ -65,17 +69,6 @@ class NoticeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
@@ -101,5 +94,14 @@ class NoticeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete($id)
+    {
+         $user = User::findOrfail($id);
+        foreach($user->notifications as $noty)
+          {
+              $noty->markAsRead();
+          }
     }
 }
