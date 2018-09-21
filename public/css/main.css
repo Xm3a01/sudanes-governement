@@ -331,11 +331,9 @@ body
 .dropdown-menu
 {
     background-color:#ff0000e3;
-    margin-top: 14px;
+    margin-top: 10px;
    direction: rtl;
    text-align: right;
-   border-top-right-radius: 0%;
-   border-top-left-radius: 0%
    
 }
 .dropdown-menu  hr {
@@ -346,4 +344,18 @@ dropdown-item:focus, .dropdown-item:hover {
     color: #f8f9fa;
     text-decoration: none;
     background-color:#f03636e3;
+}
+.dropdown-menu-left::after {
+    top: -14px;
+    right: 300px;
+    left: auto;
+}
+.dropdown-menu::after {
+    border: 7px solid transparent;
+    border-bottom-color: #f03636e3;;
+}
+.dropdown-menu::before, .dropdown-menu::after {
+    position: absolute;
+    display: inline-block;
+    content: "";
 }
