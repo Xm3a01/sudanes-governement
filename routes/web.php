@@ -13,18 +13,16 @@ use App\Ministry;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-}); 
+Route::get('/','BlagController@index');
 
 Route::get('counts', function () {
     return view('count');
-}); 
-Route::get('/blags', 'BlagController@index');
+});
 Route::post('/blags', 'BlagController@store')->name('blags.store');
 Auth::routes();
-Route::group(['middleware'=>'auth'],function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'dashboard' , 'middleware'=>'auth'],function(){
+    Route::get('/', 'Dashboard\DashboardController@index')->name('home');
+    Route::resource('ministaries','Dashboard\MinistaryController');
     Route::get('/datas', 'BlagController@data');
     Route::get('delete/{id}' , 'BlagController@delete')->name('delete.noty');
     Route::resource('blags', 'BlagController',['except'=>['index','store']]);

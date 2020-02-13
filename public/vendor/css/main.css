@@ -1,0 +1,105 @@
+
+.modal .modal-content{
+    height: -webkit-fill-available!important;
+}
+.login .content {
+     border: 1px solid #5984cc;
+    padding: 5em;
+    background-color: #609cc3;
+    margin-top: 141px;
+    width: 400px;
+}
+.login .content .form-control{
+    border-radius: 5px!important;
+}
+.modal-dialog{
+    width: 100%!important;
+    margin: 0!important;
+    height:  100% ;
+}
+@media (min-width: 768px){
+.modal-dialog {
+    width: 100%!important;
+}
+}
+@media (min-width: 768px){
+.modal-dialog {
+    width: 100%;
+    margin: 0;
+}
+}
+.modal-full {
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+.fill-cont {
+    border-radius: 0;
+    height: -webkit-fill-available;
+}
+.modal-open .modal{
+    padding: 0!important;
+  }
+  
+  
+  .modal-footer {
+    text-align: center;
+  }
+  .form .form-actions, .portlet-form .form-actions{
+      border-top: 0!important;
+  }
+
+   
+.coustm-modal {
+    height: 100%!important;
+  }
+  
+  @media (min-height: 994px) {
+    .coustm-modal {
+      height: 0%;
+    }
+  }
+  
+      .dropdown-menu1 {
+    left: auto;
+    min-width: 175px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    float: right;
+    list-style: none;
+    text-shadow: none;
+    padding: 0;
+    background-color: #fff;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+  }
+.dropdown-menu1{
+    border: 0!important;
+    border-radius: 2px!important;
+    margin: 0;
+    position: absolute!important;
+    top: auto;
+}
+     
+ 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
